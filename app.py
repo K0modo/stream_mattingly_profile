@@ -93,7 +93,7 @@ with st.container():
             st.write(f"{row[0]}")
         with cols[1]:
             if row[1] == "":
-                st.write(f"[Not Available]()")
+                st.write(f"[NA]()")
             else:
                 st.write(f"[Web Site]({row[1]})")
         with cols[2]:

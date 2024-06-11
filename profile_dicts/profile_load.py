@@ -89,6 +89,7 @@ project_links = [
     ["Medical Claims Dashboard", "https://tynan-stream-basic.onrender.com", "https://github.com/K0modo/tynan_stream_basic"],
     ["System Conversion Data Wrangling", "", "https://github.com/K0modo/system_conversion_wrangling"],
     ["Litigation Damages Overview", "https://streamlit-damages.onrender.com", "https://github.com/K0modo/streamlit_damages"],
+    ["My Profile", "", "https://stream-mattingly-profile.onrender.com"]
 ]
 
 
@@ -139,3 +140,4 @@ def store_project_links(conn, profile_data):
     result = pd.DataFrame(profile_data)
     result.to_sql('project_links', conn, if_exists='replace', index=False)
     return result
+
