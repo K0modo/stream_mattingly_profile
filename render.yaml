@@ -1,0 +1,7 @@
+services:
+    - type: web
+      name: stream_mattingly_profile
+      env: python
+      plan: free
+      buildCommand: pip install -r requirements.txt
+      startCommand: streamlit run app.py
