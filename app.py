@@ -120,21 +120,23 @@ st.write("")
 st.write("")
 with st.expander("EDUCATION, TRAINING & KNOWLEDGE"):
     st.write("")
-    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Education</h6>",
+    st.markdown(f"<h5 style='text-align: center; background-color:#2B56AD; padding:5px'>Education</h5>",
                 unsafe_allow_html=True)
-    st.markdown(f"<h6 style='padding: 10px'>Bachelor of Business Administration - Accounting, Texas A&M University, "
-                f"College Station, Texas</h6<", unsafe_allow_html=True)
-    st.write("")
-    st.write("")
-    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Training & Knowledge "
-                f"Areas</h6>",
+    st.markdown(f"<p style='padding: 10px'>Bachelor of Business Administration - Accounting, Texas A&M University, "
+                f"College Station, Texas</p>", unsafe_allow_html=True)
+    st.markdown(f"<p> </p>", unsafe_allow_html=True)
+    # st.write("")
+    # st.write("")
+    st.markdown(f"<h5 style='text-align: center; background-color:#2B56AD; padding:5px'>Training & Knowledge "
+                f"Areas</h5>",
                 unsafe_allow_html=True)
     st.write("")
     st.write("")
-    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Python Library</h6>",
+    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; "
+                f"padding:5px'>Python Library</h6>",
                 unsafe_allow_html=True)
 
-    cols = st.columns([2, 6])
+    cols = st.columns([2.2, 6])
     for index, row in p_conn.python.iterrows():
         with cols[0]:
             st.write(f"{index}")
@@ -146,7 +148,7 @@ with st.expander("EDUCATION, TRAINING & KNOWLEDGE"):
     st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Database Management</h6>",
                 unsafe_allow_html=True)
 
-    cols = st.columns([2, 6])
+    cols = st.columns([2.2, 6])
     for index, row in p_conn.database.iterrows():
         with cols[0]:
             st.write(f"{index}")
@@ -158,7 +160,7 @@ with st.expander("EDUCATION, TRAINING & KNOWLEDGE"):
     st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Finance and Accounting</h6>",
                 unsafe_allow_html=True)
     for index, item in p_conn.accounting.iterrows():
-        row1 = st.columns((2, 6))
+        row1 = st.columns((2.2, 6))
         with row1[0]:
             tile = st.container()
             tile.write(f"{index}")
@@ -168,11 +170,38 @@ with st.expander("EDUCATION, TRAINING & KNOWLEDGE"):
 
     st.write("")
     st.write("")
+    st.write("")
+    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Online_Courses</h6>",
+                unsafe_allow_html=True)
+    for index, item in p_conn.online_courses.iterrows():
+        row1 = st.columns((2.2, 6))
+        with row1[0]:
+            tile = st.container()
+            tile.write(f"{item[0]}")
+        with row1[1]:
+            tile = st.container()
+            tile.write(f"[{item[1]}]({item[2]})")
 
-    # --- DOWNLOAD BUTTON
-    st.download_button(
-        label="Download Training & Knowledge PDF",
-        data=PDFbyte2,
-        file_name=training.name,
-        mime="application/octet-stream"
-    )
+    st.write("")
+    st.write("")
+    st.write("")
+    st.markdown(f"<h6 style='text-align: center; background-color:#2B56AD; padding:5px'>Online_Video_Training</h6>",
+                unsafe_allow_html=True)
+    for index, item in p_conn.video_training.iterrows():
+        row1 = st.columns((2.2, 6))
+        with row1[0]:
+            tile = st.container()
+            tile.write(f"{item[0]}")
+        with row1[1]:
+            tile = st.container()
+            tile.write(f"[{item[1]}]({item[2]})")
+
+    st.write("")
+    st.write("")
+    # # --- DOWNLOAD BUTTON
+    # st.download_button(
+    #     label="Download Training & Knowledge PDF",
+    #     data=PDFbyte2,
+    #     file_name=training.name,
+    #     mime="application/octet-stream"
+    # )

@@ -43,9 +43,9 @@ work_history = [
 highlights = [
     "Developed multi-page interactive web application prototype to capture healthcare insurance claim information "
     "for policy holder and insurance company managers",
-    "Developed interactive web application prototype for defense of class action lawsuit for overbilling more than 5,000 "
-    "customers over multiple years.  Engaged as financial expert on two separate cases and responsible for extracting"
-    "utility billing data, building database, performing 'what-if' scenario's and reporting results.",
+    "Engaged as financial expert on two separate class action lawsuits involving overbilling of electricity by public "
+    "housing authorities.  Was responsible for extracting utility billing data, creating MS SQL database, and reporting"
+    " results to management.  Developed interactive web application prototype years.",
     "Financial administrator for CapitalOne Corporate IT.  Responsible for inventory control of hardware, "
     "software and maintenance agreements for data center operations and data network. Assisted IT team with major "
     "corporate initiative to consolidate data centers throughout the world, dispose of obsolete hardware, "
@@ -54,6 +54,14 @@ highlights = [
     "program managers with managing $500M operating budget, tracking progress and reporting status to US Congress.",
     "Active Duty Captain in US Air Force responsible for budget policy affecting $1B Alaska command operating budget"
     ]
+
+project_links = [
+    ["Multi-Page Medical Claims Dashboard", "https://tynan-1.onrender.com", "https://github.com/K0modo/tynan_1",],
+    ["Medical Claims Dashboard", "https://tynan-stream-basic.onrender.com", "https://github.com/K0modo/tynan_stream_basic"],
+    ["System Conversion Data Wrangling", "", "https://github.com/K0modo/system_conversion_wrangling"],
+    ["Litigation Damages Overview", "https://streamlit-damages.onrender.com", "https://github.com/K0modo/streamlit_damages"],
+    ["My Profile", "", "https://stream-mattingly-profile.onrender.com"]
+]
 
 python_dict = {
     'Pandas': 'Processing large datasets',
@@ -84,13 +92,29 @@ accounting_dict = {
     'Microsoft Tools': 'Excel pivot tables, lookup tables, Oracle Hyperion, other'
 }
 
-project_links = [
-    ["Multi-Page Medical Claims Dashboard", "https://tynan-1.onrender.com", "https://github.com/K0modo/tynan_1",],
-    ["Medical Claims Dashboard", "https://tynan-stream-basic.onrender.com", "https://github.com/K0modo/tynan_stream_basic"],
-    ["System Conversion Data Wrangling", "", "https://github.com/K0modo/system_conversion_wrangling"],
-    ["Litigation Damages Overview", "https://streamlit-damages.onrender.com", "https://github.com/K0modo/streamlit_damages"],
-    ["My Profile", "", "https://stream-mattingly-profile.onrender.com"]
+online_courses = [
+
+    ["Computer Programming", "Learn Python Programming Masterclass",
+     "https://www.udemy.com/course/python-the-complete-python-developer-course/?couponCode=OF53124"],
+    ["Data Science", "Python Data Analysis: NumPy & Pandas Masterclass",
+     "https://www.udemy.com/course/python-pandas/?couponCode=OF53124"],
+    ["Data Science", "Python for Data Analysis & Business Intelligence",
+     "https://www.udemy.com/course/python-foundations-for-data-analysis/?couponCode=OF53124"],
+    ["Data Science", "Python Data Visualization: Dashboards with Plotly & Dash",
+     "https://www.udemy.com/course/python-dashboards-plotly-dash/?couponCode=OF53124"],
+    ["Data Science", "Python for Data Science and Machine Learning Bootcamp",
+     "https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/?couponCode=OF53124"],
+    ["Data Science", "Data Analysis with Pandas and Python",
+     "https://www.udemy.com/course/data-analysis-with-pandas/?couponCode=OF53124"],
+    ["Database Management", "Querying Microsoft SQL Server with Transact-SQL",
+     "https://www.udemy.com/course/70-461-session-2-querying-microsoft-sql-server-2012/?couponCode=OF53124"],
+    ["Database Management", "SQL Server Reporting Services Part 1 (SSRS)",
+     "https://www.udemy.com/course/sql-server-reporting-services-part-1-ssrs/?couponCode=OF53124"],
+    ["Database Management", "SQL Server Reporting Services Part 2 (SSRS)",
+     "https://www.udemy.com/course/sql-server-reporting-services-part-2-ssrs/?couponCode=OF53124"],
 ]
+
+
 
 
 ###  STORE RESUME DATA INTO DATABASE
@@ -112,8 +136,8 @@ def store_work_history_data(conn, profile_data):
     return result
 
 
-def store_highlights_data(conn, profile_data):
-    result = pd.DataFrame(profile_data)
+def store_highlights_data(conn, highlights):
+    result = pd.DataFrame(highlights)
     result.to_sql('highlights_table', conn, if_exists='replace', index=False)
     return result
 
@@ -141,3 +165,16 @@ def store_project_links(conn, profile_data):
     result.to_sql('project_links', conn, if_exists='replace', index=False)
     return result
 
+
+def store_online_courses(conn, profile_data):
+    result = pd.DataFrame(profile_data)
+    result.to_sql('online_courses', conn, if_exists='replace', index=False)
+
+    return result
+
+
+def store_video_training(conn, profile_data):
+    result = pd.DataFrame(profile_data)
+    result.to_sql('video_training', conn, if_exists='replace', index=False)
+
+    return result

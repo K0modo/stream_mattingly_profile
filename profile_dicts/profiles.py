@@ -12,6 +12,9 @@ class Profiles:
         self.database = self.fetch_database_skills()
         self.accounting = self.fetch_accounting_skills()
         self.links = self.fetch_project_links()
+        self.online_courses = self.fetch_online_courses()
+        self.video_training = self.fetch_video_training()
+
 
     def fetch_expertise_table(self):
         db_query = "Select * from expertise_table "
@@ -57,6 +60,18 @@ class Profiles:
 
     def fetch_project_links(self):
         db_query = "Select * from project_links"
+        result = self.conn.query(db_query)
+        result = pd.DataFrame(result)
+        return result
+
+    def fetch_online_courses(self):
+        db_query = "Select * from online_courses"
+        result = self.conn.query(db_query)
+        result = pd.DataFrame(result)
+        return result
+
+    def fetch_video_training(self):
+        db_query = "Select * from video_training"
         result = self.conn.query(db_query)
         result = pd.DataFrame(result)
         return result
