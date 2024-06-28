@@ -8,8 +8,9 @@ from profile_dicts.profiles import Profiles
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 
 #  ---  PROFILE PICTURE  ---
-img = Image.open(current_dir / "assets" / "crop_hockey_pic.jpg")
-img = img.rotate(angle=10, expand=True, fillcolor='maroon')
+img = Image.open(current_dir / "assets" / "cv_photo_Jun27_borderwhite.jpg")
+img = img.rotate(angle=8, expand=False )
+
 
 #  ---  RESUME FILE  ---
 resume = current_dir / "assets" / "Resume James Christopher Mattingly May24.pdf"
@@ -39,6 +40,8 @@ p_conn = Profiles(conn)
 #  ---  BANNER SECTION  ---
 col1, col2 = st.columns(2, gap='small')
 with col1:
+    st.markdown("")
+    st.markdown("")
     st.image(img, width=250)
 with col2:
     st.title(NAME)
