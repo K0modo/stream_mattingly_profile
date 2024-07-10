@@ -13,7 +13,7 @@ img = img.rotate(angle=8, expand=False )
 
 
 #  ---  RESUME FILE  ---
-resume = current_dir / "assets" / "Resume James Christopher Mattingly May24.pdf"
+resume = current_dir / "assets" / "Resume James Christopher Mattingly July24.pdf"
 with open(resume, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
