@@ -1,14 +1,7 @@
-from app import conn
+from db_connection import conn
 import pandas as pd
 
 ###  THIS MODULE IS USED TO POPULATE RESUME DATABASE FOR FURTHER DEVELOPMENT
-
-
-###  DATABASE TABLES
-def fetch_tables_conn(conn):
-    db_query = "SELECT name FROM sqlite_master WHERE type='table'"
-    result = pd.read_sql_query(db_query, conn)
-    return result
 
 
 expertise = [
@@ -55,13 +48,6 @@ highlights = [
     "Active Duty Captain in US Air Force responsible for budget policy affecting $1B Alaska command operating budget"
     ]
 
-project_links = [
-    ["Multi-Page Medical Claims Dashboard", "https://tynan-1.onrender.com", "https://github.com/K0modo/tynan_1",],
-    ["Medical Claims Dashboard", "https://tynan-stream-basic.onrender.com", "https://github.com/K0modo/tynan_stream_basic"],
-    ["System Conversion Data Wrangling", "", "https://github.com/K0modo/system_conversion_wrangling"],
-    ["Litigation Damages Overview", "https://streamlit-damages.onrender.com", "https://github.com/K0modo/streamlit_damages"],
-    ["My Profile", "", "https://stream-mattingly-profile.onrender.com"]
-]
 
 python_dict = {
     'Pandas': 'Processing large datasets',
@@ -92,8 +78,16 @@ accounting_dict = {
     'Microsoft Tools': 'Excel pivot tables, lookup tables, Oracle Hyperion, other'
 }
 
-online_courses = [
+project_links = [
+    ["Multi-Page Medical Claims Dashboard", "https://tynan-1.onrender.com", "https://github.com/K0modo/tynan_1",],
+    ["Medical Claims Dashboard", "https://tynan-stream-basic.onrender.com", "https://github.com/K0modo/tynan_stream_basic"],
+    ["System Conversion Data Wrangling", "", "https://github.com/K0modo/system_conversion_wrangling"],
+    ["Litigation Damages Overview", "https://streamlit-damages.onrender.com", "https://github.com/K0modo/streamlit_damages"],
+    ["My Profile", "", "https://stream-mattingly-profile.onrender.com"]
+]
 
+
+online_courses = [
     ["Computer Programming", "Learn Python Programming Masterclass",
      "https://www.udemy.com/course/python-the-complete-python-developer-course/?couponCode=OF53124"],
     ["Data Science", "Python Data Analysis: NumPy & Pandas Masterclass",
@@ -114,6 +108,17 @@ online_courses = [
      "https://www.udemy.com/course/sql-server-reporting-services-part-2-ssrs/?couponCode=OF53124"],
 ]
 
+video_training = [
+    ["Computer Programming","Python Coding - John Paul Jones","https://www.youtube.com/playlist?list=PL6lxxT7IdTxFKo9DguLxGM2dhgb8-u976"],
+    ["Computer Programming","Python Coding - Arjan Codes","https://www.youtube.com/playlist?list=PLC0nd42SBTaNuP4iB4L6SJlMaHE71FG6N"],
+    ["Computer Programming","Python Coding - David Blaike","https://www.youtube.com/@davidblaikie2333/playlists"],
+    ["Data Science","Python Plotly Dash - Charming Data","https://www.youtube.com/@CharmingData/playlists"],
+    ["Data Science","Python Pandas & Data Science - Data School","https://www.youtube.com/@dataschool/playlists"],
+    ["Database Management","SQL Server - Pragim Technologies","https://www.youtube.com/playlist?list=PL08903FB7ACA1C2FB"],
+    ["Web Development","Python Streamlit - Data Professor","https://www.youtube.com/@DataProfessor/playlists"],
+    ["Web Development","Web Design and Layout - Net Ninja","https://www.youtube.com/@NetNinja/playlists"],
+    ["Web Development","Web Design and Layout - Kevin Powell","https://www.youtube.com/@KevinPowell/playlists"],
+]
 
 
 
