@@ -8,7 +8,7 @@ PAGE_TITLE = "Digital CV | James C. Mattingly"
 PAGE_ICON = ":wave:"
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 NAME = "James C. Mattingly"
-DESCRIPTION = "Assimilating years of CPA experience, data analytics and web development."
+DESCRIPTION = "Assimilating years of CPA experience, data analytics, web development and Federal Procurement."
 EMAIL = "jchrismattingly@gmail.com"
 
 
