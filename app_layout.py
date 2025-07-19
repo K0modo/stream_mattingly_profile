@@ -24,7 +24,7 @@ img = Image.open(current_dir / "assets" / "cv_photo_Jun27_borderwhite.jpg")
 img = img.rotate(angle=8, expand=False )
 
 #  ---  RESUME FILE  ---
-resume = current_dir / "assets" / "Resume James Christopher Mattingly July24.pdf"
+resume = current_dir / "assets" / "Resume Jul20 James Christopher Mattingly.pdf"
 with open(resume, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
